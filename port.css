@@ -312,6 +312,72 @@ html{
     margin: 0 0 0 70px;
     margin-bottom: 200px;
 }
+.worklist{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+.work{
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.work img{
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+.work h3{
+    font-size: 25px;
+    color: cyan;
+    text-shadow: 40px cyan;
+    font-weight: 1000;
+    margin-top: 100px;
+}
+.work p{
+    font-size: 15px;
+    color: black;
+    font-weight: 1000;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(70,60,3,0.1),#ff04ff);
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0 40px;
+    font-size: 14px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: height 0.5s;
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff04ff;
+    background: #fff;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 2%;
+    line-height: 50px;
+    font-size: 18px;
+    width: 60px;
+    height: 60px;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
 /* -------------contact------------- */
 #contact{
     position: relative;
