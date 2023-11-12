@@ -12,12 +12,16 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 30px 10%;
     background: transparent;
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 0;
     z-index: 100;
+    background-color: black;
+}
+html{
+    scroll-behavior: smooth;
 }
 .logo{
     position: relative;
@@ -25,6 +29,7 @@ body{
     text-decoration: none;
     color: rgb(193, 187, 187);
     font-weight: 600;
+    animation: lg 4s ease forwards;
 }
 .logo .b1{
     font-size: 45px;
@@ -42,11 +47,15 @@ body{
     font-weight: 500;
     margin-left: 35px;
     transition: .3s;
+    animation: navi forwards 3s ease;
+    animation-delay: calc(.2s*var(--i));
+    opacity: 0;
 }
 .navbar a:hover{
     color: aquamarine;
+    text-shadow: 0 0 40px violet;
 }
-.home{
+#home{
     position: relative;
     width: 100%;
     justify-content: space-between;
@@ -75,6 +84,7 @@ body{
     width: 100%;
     height: 100%;
     object-fit: fill;
+    animation: imgf forwards 1s ease-in-out;
 }
 .imgX:hover{
     box-shadow: 20px 0 0 15px red, 0 0 15px 20px blue;
@@ -83,35 +93,355 @@ body{
 .home-content .b1{
     font-size: 95px;
     color: red;
+    text-shadow: 0 0 20px red;
 }
 .home-content .b2{
     font-size: 85px;
     color: palegreen;
+    text-shadow: 0 0 20px palegreen;
+}
+.h{
+    animation: textAnimation 2s linear infinite;
 }
 .home-content h3{
     font-size: 60px;
 }
 .home-content h1{
     font-size: 80px;
-    color: aqua;
+    color: hsl(0, 0%, 100%);
+    text-shadow: 0 0 20px cyan;
 }
 .home-content p{
     font-size: 27px;
     color: lightseagreen;
 }
-.type{
+.con .text{
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    color: yellow;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.con .text.animated-text{
     color: orange;
 }
-.cursor{
-    color: cyan;
-    font-size: 65px;
-    animation: blink 1s linear infinite;
+.text.type{
+    font-size: 50px;
+    color: rgb(0, 255, 187);
+    text-shadow: 0 0 10px chartreuse;
 }
-@keyframes blink{
-    0%{
-        opacity: 100%;
+.text.type::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-left: 2px solid cyan;
+    animation: typing 4s steps(12) infinite;
+}
+.text.animated-text{
+    animation: textAnimation 2s linear infinite;
+    font-size: 45px;
+}
+
+@keyframes textAnimation {
+    0% { letter-spacing: 5px; }
+    50% { letter-spacing: 2px; }
+    100% { letter-spacing: 5px; }
+}
+
+@keyframes typing {
+    50%,60%{
+        left: 70%;
+    }    
+    100%{
+        left: 0%;
     }
-    50%{
+}
+@keyframes lg {
+    0%{
+        transform: translateX(-100px);
         opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes navi {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes imgf {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/* ------------About---------- */
+.q{
+    color: rgb(238, 200, 130);
+    text-shadow: 0 0 20px white;
+}
+#about{
+    position: relative;
+    padding-top: 200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.imgY{
+    flex-basis: 25%;
+    margin-left: 80px;
+}
+.imgY img{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+.ab{
+    flex-basis: 60%;
+    margin-left: 70px;
+    font-size: 25px;
+}
+.ab p{
+    color: whitesmoke;
+    padding-top: 20px;
+}
+.ab .tabi p{
+    position: relative;
+    display: inline-block;
+    color: cornflowerblue;
+}
+.ab .tabi .tab{
+    position: relative;
+    margin-right: 20%;
+    padding-top: 15px;
+    cursor: pointer;
+}
+.tab::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.4s;
+}
+.tab.t1::after{
+    width: 50%;
+}
+.tabC ul li{
+    list-style: none;
+    color: gray;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.tabC ul li span{
+    color: cyan;
+    font-size: 25px;
+}
+
+.tabC{
+    margin-top: 15px;
+    display: none;
+}
+.tabC.c1{
+    display: block;
+}
+/* .............Services............ */
+#service{
+    position: relative;
+    padding-top: 200px;
+}
+.ser{
+    color: aquamarine;
+    font-size: 25px;
+    margin: 0 0 0 70px;
+    margin-bottom: 200px;
+}
+.design{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.design div{
+    border-radius: 10px;
+    padding: 20px;
+    background: grey;
+    transition: background 0.5s, transform 0.5s;
+}
+.design h2{
+    color: blue;
+}
+.design p{
+    color: black;
+    margin-top: 5px;
+}
+.design a{
+    color: red;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.design div:hover{
+    background: cyan;
+    transform: translateY(-10px);
+}
+/* -----------port-------------- */
+#portfolio{
+    position: relative;
+    padding-top: 200px;
+    color: aquamarine;
+    font-size: 25px;
+    margin: 0 0 0 70px;
+    margin-bottom: 200px;
+}
+/* -------------contact------------- */
+#contact{
+    position: relative;
+    padding-top: 200px;
+    display: flex;
+    margin: 0 0 0 70px;
+}
+.col1{
+    color: aquamarine;
+    font-size: 25px;
+}
+.col1 a{
+    display: flex;
+    padding-top: 20px;
+    text-decoration: none;
+    color: cyan;
+}
+.col1 a span i{
+    padding-right: 15px;
+}
+.col2{
+    flex-basis: 35%;
+    color: aliceblue;
+}
+.col1{
+    flex-basis: 40%;
+}
+.but{
+    border-radius: 10px;
+    color: black;
+    background: pink;
+    width: 250px;
+    padding-left: 10%;
+    padding-bottom: 10px;
+}
+.butt{
+    padding-top: 30px;
+    padding-bottom: 200px;
+    cursor: pointer;
+}
+.bu{
+    border-radius: 10px;
+    color: black;
+    background: pink;
+    width: 100px;
+    padding-right: 12px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.col2 form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.bu{
+    cursor: pointer;
+}
+
+legend{
+    font-size: 50px;
+}
+
+@media (max-width:1000px)
+{
+    .home-content h3{
+        font-size: 40px;
+    }
+    .home-content h1{
+        font-size: 50px;
+    }
+    .con .text.type{
+        font-size: 30px;
+    }
+    .con p{
+        font-size: 15px;
+    }
+    .con p .b2{
+        font-size: 10px;
+    }
+    .ab{
+        flex-basis: 90%;
+    }
+    .design{
+        grid-gap: 10px;
+        margin-right: 40px;
+    }
+    .contact{
+        display: grid;
+    }
+    .but{
+        padding-left: 5%;
+    }
+    legend{
+        font-size: 40px;
+    }
+    form input{
+        margin-right: 40px;
+    }
+}
+@media (max-width:600px) {
+    #home{
+        flex-direction: column;
+    }
+    .ab .tabi .tab{
+        margin-right: 70px;
+    }
+    @keyframes typing {
+        50%,60%{
+            left: 50%;
+        }    
+        100%{
+            left: 0%;
+        }
+    }
+    .header{
+        padding-right: 0;
+        display: grid;
+        margin: 0;
+        padding: 0;
+    }
+    .logo{
+        padding-left: 250px;
     }
 }

@@ -12,20 +12,20 @@
         <header class="header">
             <a href="#" class="logo"><b class="b1">S</b><b class="b2">S</b>Portfolio</a>
             <nav class="navbar">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Skill</a>
-                <a href="#">Service</a>
-                <a href="#">Contact Me</a>
+                <a href="#home" style="--i:1;">Home</a>
+                <a href="#about" style="--i:2;">About</a>
+                <a href="#service" style="--i:3;">Service</a>
+                <a href="#portfolio" style="--i:4;">Portfolio</a>
+                <a href="#contact" style="--i:5;">Contact Me</a>
             </nav>
         </header>
         <section>
-            <div class="home">
+            <div id="home">
                 <div class="home-content">
                     <h3 class="h">Hello It's Me</h3>
                     <h1><b class="b1">S</b>antosh <b class="b2">S</b>ahu</h1>
                     <div class="con">
-                        <h3>And I'm a<span class="type"></span><span class="cursor">|</span></h3>
+                        <h3><span class="text animated-text">And I'm a</span><span class="text type"></span></h3>
                     </div>
                     <p>Full Stack Web Developer <b class="b2" style="font-size: 40px;">/</b> Java Programmer</p>
                 </div>
@@ -34,6 +34,107 @@
                 </div>
             </div>
         </section>
+        <!--------About------------>
+        <div id="about">
+            <div class="imgY">
+                <img src="My passphoto - Court 3.png" alt="santosh" height="580px" width="420px">
+            </div>
+            <div class="ab">
+                <h1 class="q">About Me</h1>
+                <p>I am a dedicated Web Developer with a passion for creating seamless, user-centric digital experiences.
+                   Proficient in both Frontend and Backend development, I excel in crafting visually appealing and functional websites.
+                   With expertise in HTML, CSS, JavaScript, and a knack for problem-solving,
+                   I aim to deliver intuitive and innovative solutions. 
+                   My portfolio showcases a range of projects highlighting my skills in responsive design, optimization, 
+                   and an eye for detail that ensures a superior user experience.
+                </p>
+                <div class="tabi">
+                    <p class="tab t1" onclick="opentab('skills')">Skills</p>
+                    <p class="tab t2" onclick="opentab('edu')">Education</p>
+                    <p class="tab t3" onclick="opentab('aceive')">Acheivements</p>
+                </div>
+                <div class="tabC c1" id="skills">
+                    <ul>
+                        <li><span>Java</span><br>To Solve Geeks For Geeks Problems</li>
+                        <li><span>Python</span><br>To Understand AI</li>
+                        <li><span>Frontend Developer</span><br>To Build websites</li>
+                        <li><span>Backend Developer</span><br>To Maintain DataBase</li>
+                    </ul>
+                </div>
+                <div class="tabC c2" id="edu">
+                    <ul>
+                        <li><span>2019 - 2023</span><br>Bharath University, Chennai<br>BTECh<br>CGPA = 8.81</li>
+                        <li><span>2017 - 2019</span><br>Narayana Junior College, Vizag<br>MPC<br>CGPA = 9.67</li>
+                        <li><span>2016 - 2017</span><br>Little Angels School, Palasa<br>SUBJECTS<br>GPA = 8.2</li>
+                    </ul>
+                </div>
+                <div class="tabC c3" id="aceive">
+                    <ul>
+                        <li><span>Java</span><br>400+ Solved Geeks For Geeks Problems</li>
+                        <li><span>Python</span><br>190+ Solved Geeks For Geeks Problems</li>
+                        <li><span>JavaScript</span><br>120+ Solved Geeks For Geeks Problems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!----------Services------------>
+        <div id="service">
+            <div class="ser">
+                <h1>My Services</h1>
+                <div class="design">
+                    <div>
+                        <h2>Frontend Development</h2>
+                        <p>Transforming visions into captivating digital realities, 
+                           my Frontend Development services are designed to breathe life into static designs. 
+                           With expertise in HTML, CSS, and JavaScript, I craft visually stunning, responsive, and interactive user interfaces.
+                        </p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <div>
+                        <h2>Backend Development</h2>
+                        <p>My Backend Development services are the foundation of robust and scalable digital solutions. 
+                           Proficient in languages like Java, frameworks such as Node.js, 
+                           I specialize in architecting secure and efficient server-side systems.
+                        </p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <div>
+                        <h2>Hosting Websites</h2>
+                        <p>Empowering your digital presence, my Hosting Website services offer a reliable and secure platform for your online ventures. 
+                           I provide comprehensive hosting solutions tailored to meet diverse needs, ensuring optimal performance and stability. 
+                        </p>
+                        <a href="#">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------Portfolio---------------------->
+        <div id="portfolio">
+            <h1>My Work</h1>
+            <div>
+                
+            </div>
+        </div>
+        <!-----------contact------------->
+        <div id="contact">
+            <div class="col1">
+                <h1>Contact Me</h1>
+                <a href="#"><span><i class="fa-solid fa-envelope"></i>santoshsahu0228@gmail.com</span></a>
+                <a href="#"><span><i class="fa-solid fa-phone"></i>+91 6301792165</span></a>
+                <a href="https://github.com/SaHooCodings"><span><i class="fa-brands fa-github"></i>https://github.com/SaHooCodings</span></a>
+                <div class="butt"><a href="SantoshSahu_Resume_Updated_2.0.pdf" download class="but">Download CV</a></div>
+            </div>
+            <div class="col2">
+                <legend>Contact Me</legend>
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="meggage" rows="6" placeholder="Your msg"></textarea>
+                    <button type="submit" class="bu">Submit</button>
+                </form>
+            </div>
+            <div></div>
+        </div>
     </body>
     <script src="portf.js"></script>
 </html>
